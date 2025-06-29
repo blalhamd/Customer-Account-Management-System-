@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Notification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .email-header img {
+                max-width: 100px;
+                margin-bottom: 10px;
+            }
+
+        .email-body {
+            padding: 30px;
+            color: #212529;
+        }
+
+        .email-footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #0d6efd;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="[imageUrl]" alt="Notification Icon">
+            <h2>[header]</h2>
+        </div>
+        <div class="email-body">
+            <p>Here are the details of your account:</p>
+            <pre style="white-space: pre-wrap; font-family: inherit;">[TextBody]</pre>
+
+            <a href="[link]" class="btn-primary">[Title]</a>
+        </div>
+        <div class="email-footer">
+            &copy; 2025 Your Bank. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

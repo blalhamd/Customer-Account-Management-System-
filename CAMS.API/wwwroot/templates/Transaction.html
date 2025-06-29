@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Transaction Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .header img {
+                max-width: 60px;
+                margin-bottom: 10px;
+            }
+
+            .header h2 {
+                margin: 0;
+                font-size: 22px;
+            }
+
+        .content {
+            padding: 30px;
+        }
+
+            .content p {
+                font-size: 15px;
+                line-height: 1.6;
+                margin: 0 0 10px;
+            }
+
+        .details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            font-size: 14px;
+            white-space: pre-line;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="[imageUrl]" alt="Transaction" />
+            <h2>[header]</h2>
+        </div>
+        <div class="content">
+            <p>We’re writing to confirm your recent transaction:</p>
+            <div class="details">[TextBody]</div>
+            <a class="button" href="[link]">[Title]</a>
+        </div>
+        <div class="footer">
+            If you did not authorize this transaction, please contact our support immediately.
+        </div>
+    </div>
+</body>
+</html>

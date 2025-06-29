@@ -1,0 +1,6 @@
+@CAMS.API_HostAddress = http://localhost:5299
+
+GET {{CAMS.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
