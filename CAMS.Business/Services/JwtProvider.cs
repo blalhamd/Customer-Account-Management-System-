@@ -15,7 +15,7 @@ namespace CAMS.Business.Services
     {
         private readonly JwtSetting _jwtSetting;
 
-        public JwtProvider(IOptions<JwtSetting> jwtSetting)
+        public JwtProvider(IOptionsSnapshot<JwtSetting> jwtSetting)
         {
             _jwtSetting = jwtSetting.Value;
         }

@@ -11,7 +11,7 @@ namespace CAMS.Business.Services.Email
     {
         private readonly MailSettings _settings;
 
-        public EmailSender(IOptions<MailSettings> settings)
+        public EmailSender(IOptionsSnapshot<MailSettings> settings)
         {
             _settings = settings.Value;
         }

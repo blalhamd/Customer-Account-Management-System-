@@ -9,22 +9,22 @@ namespace CAMS.API.Extensions
 
             // Configure the JwtSetting options from the configuration
 
-            services.Configure<JwtSetting>(configuration.GetSection("Jwt"));
+            services.Configure<JwtSetting>(configuration.GetSection(JwtSetting.SectionName));
 
             // Validate the configuration settings on start
 
-            services.AddOptions<JwtSetting>(configuration["Jwt"])
+            services.AddOptions<JwtSetting>(configuration[JwtSetting.SectionName])
                             .ValidateDataAnnotations()
                             .ValidateOnStart();
 
 
             // Configure the MailSettings options from the configuration
 
-            services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+            services.Configure<MailSettings>(configuration.GetSection(MailSettings.SectionName));
 
             // Validate the configuration settings on start
 
-            services.AddOptions<MailSettings>(configuration["MailSettings"])
+            services.AddOptions<MailSettings>(configuration[MailSettings.SectionName])
                             .ValidateDataAnnotations()
                             .ValidateOnStart();
 
