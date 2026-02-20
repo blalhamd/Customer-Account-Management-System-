@@ -4,7 +4,7 @@ namespace CAMS.Domains.Entities.Base
 {
     public class BaseEntity<T> : IEntity<T>, IAudiotableEntity<T>, ISoftDeletable<T>
     {
-        public required T Id { get; set; } 
+        public T Id { get; set; } = default!;
         public T? CreatedByUserId { get; set; } 
         public DateTimeOffset CreatedAt { get; set; }
         public T? UpdatedByUserId { get; set; }

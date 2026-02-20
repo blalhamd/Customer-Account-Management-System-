@@ -1,8 +1,8 @@
 ﻿namespace CAMS.Core.Constants
 {
-    public class PaginedResponse<T>
+    public class PaginedResponse<T> 
     {
-        public required T Items { get; set; }
+        public T Items { get; set; } = default!;
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public int TotalPages { get; set; }
