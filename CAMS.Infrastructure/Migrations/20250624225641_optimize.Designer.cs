@@ -13,7 +13,7 @@ namespace CAMS.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20250624225641_optimize")]
-    partial class optimize
+    partial class Optimize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -9,7 +9,7 @@ namespace CAMS.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class AccountController : ControllerBase
     {
         private readonly IAccountService _accountService;
 

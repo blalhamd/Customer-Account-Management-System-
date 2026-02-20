@@ -16,13 +16,13 @@ namespace CAMS.Core.IRepositories.Generic
             int pageNumber = 1,
             int pageSize = 10, CancellationToken cancellationToken = default);
 
-        Task<TEntity> GetByIdAsync(TPrimaryKey id);
+        Task<TEntity?> GetByIdAsync(TPrimaryKey id);
 
-        Task<TEntity> FirstOrDefaultAsync(
+        Task<TEntity?> FirstOrDefaultAsync(
             Expression<Func<TEntity, bool>> condition,
             Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null!, CancellationToken cancellationToken = default);
 
-        Task<TEntity> FirstOrDefaultAsync(
+        Task<TEntity?> FirstOrDefaultAsync(
            Expression<Func<TEntity, bool>> condition = null!,
             Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null!,
             Expression<Func<TEntity, object>> orderBy = null!,

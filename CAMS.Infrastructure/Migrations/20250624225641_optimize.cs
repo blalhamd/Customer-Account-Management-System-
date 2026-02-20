@@ -5,7 +5,7 @@
 namespace CAMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class optimize : Migration
+    public partial class Optimize : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

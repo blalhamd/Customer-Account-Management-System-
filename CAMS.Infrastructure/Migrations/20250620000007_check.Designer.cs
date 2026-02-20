@@ -13,7 +13,7 @@ namespace CAMS.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20250620000007_check")]
-    partial class check
+    partial class Check
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

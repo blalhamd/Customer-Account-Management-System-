@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CAMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class modifications : Migration
+    public partial class Modifications : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -4,7 +4,6 @@ using CAMS.Infrastructure.Data.context;
 using CAMS.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Threading;
 
 namespace CAMS.Infrastructure.Repositories.Generic
 {
@@ -21,9 +20,9 @@ namespace CAMS.Infrastructure.Repositories.Generic
         }
 
         public async Task<PaginedResponse<IEnumerable<TEntity>>> GetAllAsync(
-           Expression<Func<TEntity, bool>> condition = null,
-           Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null,
-           Expression<Func<TEntity, object>> orderBy = null,
+           Expression<Func<TEntity, bool>> condition = null!,
+           Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null!,
+           Expression<Func<TEntity, object>> orderBy = null!,
            bool isAscending = true,
            int pageNumber = 1,
            int pageSize = 10,
@@ -63,7 +62,7 @@ namespace CAMS.Infrastructure.Repositories.Generic
         }
 
 
-        public async Task<TEntity> GetByIdAsync(TPrimaryKey id)
+        public async Task<TEntity?> GetByIdAsync(TPrimaryKey id)
         {
             return await _entities.FindAsync(id);
         }
@@ -93,7 +92,7 @@ namespace CAMS.Infrastructure.Repositories.Generic
             return Task.CompletedTask;
         }
 
-        public async Task<TEntity> FirstOrDefaultAsync(
+        public async Task<TEntity?> FirstOrDefaultAsync(
             Expression<Func<TEntity, bool>> condition,
             Func<IQueryable<TEntity>, IQueryable<TEntity>>[]? includes = null,
             CancellationToken cancellationToken = default)
@@ -119,7 +118,7 @@ namespace CAMS.Infrastructure.Repositories.Generic
             return Task.CompletedTask;
         }
 
-        public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> condition = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null, Expression<Func<TEntity, object>> orderBy = null, bool isAscending = true)
+        public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> condition = null!, Func<IQueryable<TEntity>, IQueryable<TEntity>>[] includes = null!, Expression<Func<TEntity, object>> orderBy = null!, bool isAscending = true)
         {
             IQueryable<TEntity> query = _entities;
 
