@@ -78,8 +78,8 @@ namespace CAMS.Business.Services
             }
 
             var clients = await _clientRepository.GetAllAsync(
-                          filter,
-                          includes: null,
+                          filter?? null!,
+                          includes: null!,
                           orderBy: x => x.CreatedAt,
                           isAscending: false,
                           pageNumber: query.PageNumber,
