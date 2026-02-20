@@ -137,7 +137,7 @@ namespace CAMS.Business.Services
                            predicate!,
                            orderBy: ja => ja.CreatedAt,
                            isAscending: false,
-                           pageNumber: q.PageNumber,
+                           pageNumber: q!.PageNumber,
                            pageSize: q.PageSize,
                            cancellationToken: ct);
 
