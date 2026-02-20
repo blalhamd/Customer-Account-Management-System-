@@ -19,7 +19,7 @@ namespace CAMS.Business.Services.image
         }
 
 
-        public async Task<string> UploadImageOnServer(IFormFile image, bool deleteIfExist = false, string oldPath = null, CancellationToken cancellationToken = default)
+        public async Task<string> UploadImageOnServer(IFormFile image, bool deleteIfExist = false, string oldPath = null!, CancellationToken cancellationToken = default)
         {
 
             var folderPath = Path.Combine(_basePath, "images");
@@ -41,11 +41,11 @@ namespace CAMS.Business.Services.image
             return $"images/{uniqueFileName}";
         }
 
-        public async Task RemoveImage(string oldPath)
+        public Task RemoveImage(string oldPath)
         {
             if (string.IsNullOrWhiteSpace(oldPath))
             {
-                return;
+                return Task.CompletedTask;
             }
 
             // 🔹 Ensure the correct absolute path
@@ -76,6 +76,8 @@ namespace CAMS.Business.Services.image
             {
                 _logger.LogInformation($"⚠️ File not found: {imagePath}");
             }
+
+            return Task.CompletedTask;
         }
 
 

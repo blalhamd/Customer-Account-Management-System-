@@ -29,7 +29,7 @@ namespace CAMS.Business.Services.Cache
 
         public async Task<string> GetCachedResponseAsync(string key)
         {
-            _memoryCache.TryGetValue(key, out string cachedResponse);
+            _memoryCache.TryGetValue(key, out string? cachedResponse);
 
             return await Task.FromResult(cachedResponse!);
         }
