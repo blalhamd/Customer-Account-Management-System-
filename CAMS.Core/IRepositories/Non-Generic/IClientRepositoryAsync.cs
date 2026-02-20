@@ -8,5 +8,6 @@ namespace CAMS.Core.IRepositories.Non_Generic
     {
         Task<ClientDto?> GetClientByIdAsync(string clientId);
         Task<Client> GetSoftDeleteClientAsync(string clientId);
+        Task<Client?> GetSoftDeleteClientAsyncV2(string clientId);
     }
 }

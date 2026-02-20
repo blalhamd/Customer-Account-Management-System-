@@ -1,5 +1,6 @@
 ﻿using CAMS.Core.Constants;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -39,5 +40,7 @@ namespace CAMS.API.Extensions
 
             return services;
         }
+
+        
     }
 }

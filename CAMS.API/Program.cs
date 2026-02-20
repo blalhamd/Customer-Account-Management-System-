@@ -27,6 +27,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 
 builder.Services.OptionsPatternConfig(builder.Configuration); // belong IOptions Pattern
+builder.Services.RegisterOpenAPI();
 
 builder.Services.AddDataProtection();
 builder.Services.AddMemoryCache();
@@ -115,13 +116,16 @@ app.UseAuthentication();
 app.UseMiddleware<PermissionAuthorizationMiddleware>(); // your custom permission check
 app.UseAuthorization();
 
-app.MapControllers();
-
 app.UseMiddleware<CalculateTimeOfRequest>();
 app.UseMiddleware<ErrorHandlingMiddleWare>();
 
 
 app.MapControllers();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
 // ✅ Schedule the Recurring Job
 //ScheduleRecurringJob(app.Services);
 

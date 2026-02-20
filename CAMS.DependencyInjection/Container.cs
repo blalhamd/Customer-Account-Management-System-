@@ -8,15 +8,11 @@ namespace CAMS.DependencyInjection
         public static IServiceCollection RegisterConfig(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.RegisterConnection(configuration);
-
-            services.RegisterServices();
-
-            services.AddScoped<IUnitOfWorkAsync, UnitOfWorkAsync>();
-
-            services.RegisterRepositories();
-
-            services.AddAutoMapper(typeof(Mapping).Assembly);
+            services.RegisterConnection(configuration)
+                    .RegisterServices()
+                    .RegisterRepositories()
+                    .AddScoped<IUnitOfWorkAsync, UnitOfWorkAsync>()
+                    .AddAutoMapper(typeof(Mapping).Assembly);
 
             return services;
         }
@@ -66,5 +62,7 @@ namespace CAMS.DependencyInjection
 
             return services;
         }
+
+      
     }
 }

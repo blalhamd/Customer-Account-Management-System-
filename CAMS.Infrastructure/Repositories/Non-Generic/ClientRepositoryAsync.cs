@@ -49,8 +49,7 @@ namespace CAMS.Infrastructure.Repositories
                                                       IsSigned = a.IsSigned,
                                                   }).ToList()
                                               })
-                                              .FirstOrDefaultAsync(x => x.Id == clientId)
-                                              ;
+                                              .FirstOrDefaultAsync(x => x.Id == clientId);
 
             return query;
         }
@@ -62,5 +61,16 @@ namespace CAMS.Infrastructure.Repositories
 
             return client!;
         }
+
+        public Task<Client?> GetSoftDeleteClientAsyncV2(string clientId)
+        {
+            return _getSoftDeleteClient(_context, clientId);
+        }
+
+        private static readonly Func<AppDbContext, string, Task<Client?>> _getSoftDeleteClient =
+            EF.CompileAsyncQuery((AppDbContext context, string clientId)
+                => context.Set<Client>().IgnoreQueryFilters()
+                                               .FirstOrDefault(x => x.Id == clientId && x.IsDeleted));
+
     }
 }
